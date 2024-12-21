@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
-
+import Profile from "../../../src/assets/IMG_20230602_190501-modified.jpg";
 const About = () => {
   const [loading, setLoading] = useState(true);
 
@@ -59,7 +59,7 @@ const About = () => {
   }, []);
   return (
     <div>
-      {loading && <div id="preloader"></div>}
+      {/* {loading && <div id="preloader"></div>} */}
       <main className="main ">
         <div className="page-title" data-aos="fade">
           <div className="heading">
@@ -75,7 +75,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <nav className="breadcrumbs">
+          {/* <nav className="breadcrumbs">
             <div className="container">
               <ol>
                 <li>
@@ -84,7 +84,7 @@ const About = () => {
                 <li className="current">About</li>
               </ol>
             </div>
-          </nav>
+          </nav> */}
         </div>
 
         <section id="about" className="about section">
@@ -92,8 +92,8 @@ const About = () => {
             <div className="row gy-4 justify-content-center">
               <div className="col-lg-4">
                 <img
-                  src="https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  className="img-fluid"
+                  src={Profile}
+                  style={{width:"250px"}}
                   alt=""
                 />
               </div>

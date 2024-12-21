@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
 import AOS from "aos";
-import emailjs from "emailjs-com"; 
+import emailjs from "emailjs-com";
 
 const Contact = () => {
-  const form = useRef(); // This should reference the form element
+  const form = useRef();
   const [loading, setLoading] = useState(true);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -27,35 +27,33 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    // Send form data to EmailJS
+
     emailjs
       .sendForm(
-        'service_nj3jhbv',      // Your service ID
-        'template_igh2v2h',      // Your template ID
-        form.current,            // Form reference
-        'mEbxfuSkFIxmkonwm'     // Your public key
+        "service_nj3jhbv",
+        "template_igh2v2h",
+        form.current,
+        "mEbxfuSkFIxmkonwm"
       )
       .then(
         (response) => {
-          console.log('SUCCESS!', response);
-          // Show success message
-          setSuccessMessage('Your message has been sent successfully!');
-          setErrorMessage('');  // Clear any previous error messages
+          console.log("SUCCESS!", response);
+
+          setSuccessMessage("Your message has been sent successfully!");
+          setErrorMessage("");
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          // Show error message
-          setSuccessMessage('');  // Clear success message if error occurs
-          setErrorMessage('Something went wrong. Please try again later.');
+          console.log("FAILED...", error.text);
+
+          setSuccessMessage("");
+          setErrorMessage("Something went wrong. Please try again later.");
         }
       );
   };
-  
 
   return (
     <div>
-      {loading && <div id="preloader"></div>}
+      {/* {loading && <div id="preloader"></div>} */}
       <main className="main">
         <div className="page-title" data-aos="fade">
           <div className="heading">
@@ -71,7 +69,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <nav className="breadcrumbs">
+          {/* <nav className="breadcrumbs">
             <div className="container">
               <ol>
                 <li>
@@ -80,12 +78,12 @@ const Contact = () => {
                 <li className="current">Contact</li>
               </ol>
             </div>
-          </nav>
+          </nav> */}
         </div>
         <section id="contact" className="contact section">
           <div className="container" data-aos="fade-up" data-aos-delay="100">
             <div className="row gy-4">
-              {/* Contact information */}
+           
               <div className="col-md-6">
                 <div
                   className="info-item d-flex align-items-center"
@@ -100,7 +98,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Other contact information */}
+            
               <div className="col-md-6">
                 <div
                   className="info-item d-flex align-items-center"
@@ -115,13 +113,13 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Form to contact */}
+         
               <form
                 onSubmit={handleSubmit}
                 className="php-email-form"
                 data-aos="fade-up"
                 data-aos-delay="600"
-                ref={form} // Ensure the ref is assigned to the form
+                ref={form}
               >
                 <div className="row gy-4">
                   <div className="col-md-6">

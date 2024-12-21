@@ -91,7 +91,7 @@ const Portfolio = () => {
 
   return (
     <div>
-      {loading && <div id="preloader"></div>}
+      {/* {loading && <div id="preloader"></div>} */}
       <main className="main">
         <div className="page-title" data-aos="fade">
           <div className="heading">
@@ -107,7 +107,7 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-          <nav className="breadcrumbs">
+          {/* <nav className="breadcrumbs">
             <div className="container">
               <ol>
                 <li>
@@ -116,7 +116,7 @@ const Portfolio = () => {
                 <li className="current">Portfolio</li>
               </ol>
             </div>
-          </nav>
+          </nav> */}
         </div>
         <section id="portfolio" className="portfolio section ">
           <div className="container " style={{minHeight:"250px"}}>

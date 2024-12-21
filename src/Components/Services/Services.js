@@ -13,7 +13,7 @@ const Services = () => {
             }, []);
   return (
     <div>
-      {loading && <div id="preloader"></div>}
+      {/* {loading && <div id="preloader"></div>} */}
       <main className="main">
         <div className="page-title" data-aos="fade">
           <div className="heading">
@@ -31,7 +31,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <nav className="breadcrumbs">
+          {/* <nav className="breadcrumbs">
             <div className="container">
               <ol>
                 <li>
@@ -40,7 +40,7 @@ const Services = () => {
                 <li className="current">Services</li>
               </ol>
             </div>
-          </nav>
+          </nav> */}
         </div>
         <section id="services" className="services section">
           <div className="container">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
 import "./Home.css";
+import Profile from "../../../src/assets/10.jpg";
 import AOS from "aos";
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -33,19 +34,20 @@ const Home = () => {
         backDelay: 2000,
       });
     }
-  }, []); // Empty dependency array ensures this runs only once
+  }, []);
 
   return (
     <div>
-      {/* Show preloader while loading */}
-      {loading && <div id="preloader"></div>}
+     
+      {/* {loading && <div id="preloader"></div>} */}
 
-      {/* Main content */}
+  
       <main className="main">
         <section id="hero" className="hero section dark-background">
           <img
-            src="https://wallpapercave.com/wp/wp4339383.jpg"
+            src={Profile}
             alt=""
+            className="profile-img"
             data-aos="fade-in"
           />
           <div className="container" data-aos="zoom-out" data-aos-delay="100">

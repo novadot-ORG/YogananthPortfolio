@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./Resume.css";
 import { Link } from "react-router-dom";
+import  resume  from "../../Resume/YogananthResume.pdf.pdf";
 const Resume = () => {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  const handleDownload = (event) => {
+    event.preventDefault(); 
+    const link = document.createElement("a");
+    link.href = resume; 
+    link.download = "Yogananth_Resume.pdf"; 
+    document.body.appendChild(link); 
+    link.click(); 
+    document.body.removeChild(link); 
+  };
   return (
     <div>
-      {loading && <div id="preloader"></div>}
+     
       <main className="main">
         <div className="page-title" data-aos="fade">
           <div className="heading">
@@ -34,7 +38,7 @@ const Resume = () => {
               </div>
             </div>
           </div>
-          <nav className="breadcrumbs">
+          {/* <nav className="breadcrumbs">
             <div className="container">
               <ol>
                 <li>
@@ -43,7 +47,7 @@ const Resume = () => {
                 <li className="current">Resume</li>
               </ol>
             </div>
-          </nav>
+          </nav> */}
         </div>
 
         <section id="resume" className="resume section">
@@ -135,6 +139,15 @@ const Resume = () => {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row mt-5">
+            <div className="col-lg-12 text-center">
+            <form class="php-email-form">
+  <button type="submit" id="button" onClick={handleDownload}>
+    Download Resume
+  </button>
+</form>
             </div>
           </div>
         </section>
